@@ -1,0 +1,23 @@
+contacts = {}
+
+def add_contact(name, phone, email):
+    contacts[name] = {"Phone": phone, "Email": email}
+
+def remove_contact(name):
+    if name in contacts:
+        del contacts[name]
+    else:
+        print("Contact not found!")
+
+def view_contacts():
+    if contacts:
+        for name, info in contacts.items():
+            print(f"Name: {name}, Phone: {info['Phone']}, Email: {info['Email']}")
+    else:
+        print("No contacts added yet.")
+
+# Example usage
+add_contact("John Doe", "1234567890", "john@example.com")
+view_contacts()
+remove_contact("John Doe")
+view_contacts()
